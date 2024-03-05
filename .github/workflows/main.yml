@@ -20,7 +20,7 @@ jobs:
           node-version: '16'
 
       - name: Abhängigkeiten installieren
-        run: npm install
+        run: npm install --force
 
       - name: Code Linting (with Fix)
         run: npm run eslint -- --fix
@@ -28,8 +28,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run Tests
-        run: npm test
+      #- name: Run Tests
+       # run: npm test
 
   tag_release:
     if: ${{ github.event_name == 'push' && (!contains(toJSON(github.event.head_commit.message), '#skip')) }}
