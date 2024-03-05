@@ -1,4 +1,4 @@
-name: CI/CD Ppokedex
+name: CI/CD Pokedex
 
 on:
   push:
@@ -26,5 +26,4 @@ jobs:
         run: npm run build
       - name: Run Tests
         run: npm test
-      - name: Build
-        run: npm run build
+      
